@@ -1,0 +1,59 @@
+/*dla k = 2, l nieparzystego, i h = 0*/
+int fun1(int l) {
+	int sum = 0;
+	int dziel = 0;
+	int poziom = l / 2 + 1;
+	for (int i = 0; i < poziom; i++) {
+		dziel = dziel + i * 8;
+		sum = sum + i*i * 8;
+	}
+	return sum / dziel;
+}
+
+/*dla k = 2, l parzystego, i h = 0*/
+int fun2(int l) {
+	int sum = 0;
+	int dziel = 0;
+	int poziom = l / 2 + 1;
+	for (int i = 0; i < poziom; i++) {
+		if (i != poziom - 1) {
+			dziel = dziel + i * 8;
+			sum = sum + i*i * 8;
+		}
+		else if (i == poziom - 1) {
+			dziel = dziel + 2 * l - 1;
+			sum = sum + (2 * l - 1)*i;
+		}
+	}
+	return sum / dziel;
+}
+
+/*dla k = 2, l nieparzystego, i h = 1*/
+int fun3(int l) {
+	int sum = 0;
+	int dziel = 0;
+	int poziom = l / 2 + 1;
+	for (int i = 0; i < poziom; i++) {
+		dziel = dziel + i * 8;
+		sum = sum + 12 * kwadrat(i);
+	}
+	return sum / dziel;
+}
+
+/*dla k = 2, l parzystego, i h = 1*/
+int fun4(int l) {
+	int sum = 0;
+	int dziel = 0;
+	int poziom = l / 2 + 1;
+	for (int i = 0; i < poziom; i++) {
+		if (i != poziom - 1) {
+			dziel = dziel + i * 8;
+			sum = sum + 12 * kwadrat(i);
+		}
+		else if (i == poziom - 1) {
+
+			dziel = dziel + 2 * l - 1;
+		}
+	}
+	return sum / dziel;
+}

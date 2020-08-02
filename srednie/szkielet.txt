@@ -1,0 +1,67 @@
+
+#include<iostream>
+#pragma warning(disable : 4996)
+
+using namespace std;
+
+
+typedef struct graf {
+	long long int id;
+	graf *sasiad;
+}graf;
+
+
+
+int main() {
+	unsigned int x;
+	scanf("%d", &x);
+	long long int d, k, l, h;
+	graf *poczatek, *plansza;
+	for (int i = 0; i < x; i++) {
+		scanf("%d %d %d %d", &d, &l, &k, &h);
+		if (k == 0 && h == 2) {
+			printf("Inf\n");
+		}
+		else {
+			if (h == 0) {
+				/*tworzenie grafu z s¹siadami obok i na skos*/
+				if (k == 0) {
+					for (int i = 0; i < l; i++) {
+						plansza = (graf *)malloc(sizeof(graf));
+					}
+				}
+				else if (k == 1) {
+					/*jedna œciana utorzsamiona*/
+				}
+				else if (k == 2) {
+					/*dwie œciany utorzsamione*/
+				}
+			}
+			else if (h == 1) {
+				/*tworzenie grafu z s¹siadami obok*/
+				if (k == 0) {
+					/*bez œcian utorzsamianych*/
+				}
+				else if (k == 1) {
+					/*jedna œciana utorzsamiona*/
+				}
+				else if (k == 2) {
+					/*dwie œciany utorzsamione*/
+				}
+			}
+			else if (h == 2) {
+				/*tworzenie grafu z s¹siadami na skos*/
+				if (k == 0) {
+					/*bez œcian utorzsamianych*/
+				}
+				else if (k == 1) {
+					/*jedna œciana utorzsamiona*/
+				}
+				else if (k == 2) {
+					/*dwie œciany utorzsamione*/
+				}
+			}
+		}
+	}
+	return 0;
+}
